@@ -35,7 +35,7 @@ func initAll() {
 	sentinelInit()
 	createFlowRule("limitWithSentinel", 1, 1000)
 	// chan限流器
-	chan_limiter = limit_util.NewChannelLimiter(1)
+	chan_limiter = limit_util.NewChannelLimiter(3)
 	counter_limiter = limit_util.NewCountLimiter(1*time.Second, 1)
 	httpInit()
 }
